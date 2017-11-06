@@ -1,0 +1,4 @@
+/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_1.fq.gz,/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_2.fq.gz
+/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A2_1.fq.gz,/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A2_2.fq.gz
+/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/B1_1.fq.gz,/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/B1_2.fq.gz
+/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/B2_1.fq.gz,/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/B2_2.fq.gz

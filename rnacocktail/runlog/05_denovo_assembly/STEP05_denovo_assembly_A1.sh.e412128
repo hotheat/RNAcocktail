@@ -1,0 +1,36 @@
+INFO 2017-11-05 10:24:05,169 src.utils            Running RNASeqPipeline 0.2.1
+INFO 2017-11-05 10:24:05,170 src.utils            Command-line /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/scripts/run_rnacocktail.py denovo --threads 5 --sample A1 --outdir /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out --workdir /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work --1 /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_1.fq.gz --2 /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_2.fq.gz --U  --I  --assmebly_hash 25 --file_format fastq.gz --read_type short
+INFO 2017-11-05 10:24:05,170 src.utils            Arguments are Namespace(1='/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_1.fq.gz', 2='/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_2.fq.gz', I='', U='', assembler='Oases', assmebly_hash=25, file_format='fastq.gz', mode='denovo', oases='oases', oases_opts='', outdir='/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out', read_type='short', sample='A1', start=0, threads=5, timeout=10000000, velvetg='velvetg', velvetg_opts='', velveth='velveth', velveth_opts='', workdir='/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work')
+INFO 2017-11-05 10:24:05,170 src.utils            Run log will be saved in /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/logs/run-A1-denovo-20171105-102405.log
+INFO 2017-11-05 10:24:05,171 src.utils            Run in mode: denovo
+INFO 2017-11-05 10:24:05,171 src.utils            Running de novo assembly step using Oases
+INFO 2017-11-05 10:24:05,171 src.run_dnv_assemebly Running de novo assembly (OASES) for A1
+INFO 2017-11-05 10:24:05,179 src.run_dnv_assemebly --------------------------STEP 0--------------------------
+INFO 2017-11-05 10:24:05,180 src.run_dnv_assemebly Task: Erase Oases work directory for A1 
+INFO 2017-11-05 10:24:05,180 src.run_dnv_assemebly Running "bash -c rm -rf /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/oases/A1/*" 
+INFO 2017-11-05 10:24:05,570 src.run_dnv_assemebly Done Erase Oases work directory for A1 
+INFO 2017-11-05 10:24:05,570 src.run_dnv_assemebly Returned code 0 (0.384983 seconds)
+INFO 2017-11-05 10:24:05,576 src.run_dnv_assemebly --------------------------STEP 1--------------------------
+INFO 2017-11-05 10:24:05,578 src.run_dnv_assemebly Task: velveth for A1 
+INFO 2017-11-05 10:24:05,578 src.run_dnv_assemebly Running "bash -c velveth /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/oases/A1 25   -fastq.gz -short -separate /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_1.fq.gz /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_2.fq.gz " 
+INFO 2017-11-05 10:24:10,375 src.run_dnv_assemebly Done velveth for A1 
+INFO 2017-11-05 10:24:10,377 src.run_dnv_assemebly Returned code 0 (4.78439 seconds)
+INFO 2017-11-05 10:24:10,377 src.run_dnv_assemebly --------------------------STEP 2--------------------------
+INFO 2017-11-05 10:24:10,377 src.run_dnv_assemebly Task: velvetg for A1 
+INFO 2017-11-05 10:24:10,377 src.run_dnv_assemebly Running "bash -c velvetg /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/oases/A1  -read_trkg yes " 
+INFO 2017-11-05 10:24:29,463 src.run_dnv_assemebly Done velvetg for A1 
+INFO 2017-11-05 10:24:29,464 src.run_dnv_assemebly Returned code 0 (19.0536 seconds)
+INFO 2017-11-05 10:24:29,464 src.run_dnv_assemebly --------------------------STEP 3--------------------------
+INFO 2017-11-05 10:24:29,465 src.run_dnv_assemebly Task: oases for A1 
+INFO 2017-11-05 10:24:29,465 src.run_dnv_assemebly Running "bash -c oases /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/oases/A1  " 
+INFO 2017-11-05 10:24:33,912 src.run_dnv_assemebly Done oases for A1 
+INFO 2017-11-05 10:24:33,913 src.run_dnv_assemebly Returned code 0 (4.43137 seconds)
+INFO 2017-11-05 10:24:33,917 src.run_dnv_assemebly --------------------------STEP 4--------------------------
+INFO 2017-11-05 10:24:33,918 src.run_dnv_assemebly Task: Copy predictions to output directory for A1. 
+INFO 2017-11-05 10:24:33,918 src.run_dnv_assemebly Running "cp /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/oases/A1/transcripts.fa /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out/oases/A1/transcripts.fa" 
+INFO 2017-11-05 10:24:33,980 src.run_dnv_assemebly Done Copy predictions to output directory for A1. 
+INFO 2017-11-05 10:24:33,980 src.run_dnv_assemebly Returned code 0 (0.0446231 seconds)
+INFO 2017-11-05 10:24:33,980 src.run_dnv_assemebly Oases was successfull!
+INFO 2017-11-05 10:24:33,981 src.run_dnv_assemebly Output transcripts: /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out/oases/A1/transcripts.fa
+INFO 2017-11-05 10:24:33,981 src.utils            Run log is saved in /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/logs/run-A1-denovo-20171105-102405.log
+INFO 2017-11-05 10:24:33,981 src.utils            All Done!

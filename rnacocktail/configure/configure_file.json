@@ -1,0 +1,95 @@
+{ "General_Arguement":
+
+  {
+    "seq_pwd": "./configure/seq_name.txt",
+    "sample": "A1,A2 B1,B2",
+    "threads": 5,
+    "start": 0,
+    "timeout": 10000000,
+    "1": "\"\"",
+    "2": "\"\"",
+    "U": "\"\"",
+    "sra": "\"\"",
+    "I": "\"\"",
+    "work_dir": "/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work",
+    "out_dir": "/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out",
+    "template_path": "/hwfssz1/ST_OCEAN/USER/guojiao1/Project/Pipeline/rnacocktail/template/"
+  },
+
+  "Short_Read_Alignment":
+
+  {
+    "ref_genome_fa": "/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/example_small/Homo_sapiens.GRCh37.75.dna.chromosome.21.fa",
+    "align_idx": "/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/example/Homo_sapiens.GRCh37.75.dna.chromosome.21.HISAT2",
+    "ref_gtf": "/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/example_small/Homo_sapiens.GRCh37.75.gtf",
+    "sr_aligner": "hisat2",
+    "hisat2": "hisat2",
+    "hisat2_sps": "hisat2_extract_splice_sites.py",
+    "samtools": "samtools",
+    "hisat2_opts": "''"
+  },
+
+  "Short_Read_Transcriptome_Reconstruction":
+
+  {
+    "alignment_bam": "",
+    "reconstructor": "stringtie",
+    "stringtie": "stringtie",
+    "stringtie_opts": "''"
+  },
+
+  "Alignment_free_quantification":
+
+  {
+    "threads_salmon": 4,
+    "transcriptome_fa": "/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/example_small/Homo_sapiens.GRCh37.75.cdna.all.fa",
+    "quantifier_idx": "/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/example/Homo_sapiens.GRCh37.75.cdna.21.Salmon.fmd",
+    "idx_type": "fmd",
+    "salmon_k": 19,
+    "libtype": "A",
+    "unzip": "",
+    "salmon": "salmon",
+    "salmon_smem_opts": "''"
+  },
+
+  "Differential_Analysis":
+
+  {
+    "quant_files": "",
+    "transcript_gtfs": "",
+    "alignments": "",
+    "mincount": 2,
+    "alpha_float": 0.05,
+    "R": "R",
+    "difftool": "DESeq2",
+    "featureCounts": "featureCounts",
+    "featureCounts_opts": "''"
+  },
+
+  "De_novo_assembly":
+
+  {
+    "assembler": "Oases",
+    "assembly_hash": 25,
+    "file_format": "fastq",
+    "read_type": "short",
+    "oases": "oases",
+    "velvetg": "velvetg",
+    "velveth": "velveth",
+    "oases_opts": "''",
+    "velvetg_opts": "''",
+    "velveth_opts": "''"
+  },
+
+  "Variant Calling":
+  {
+    "threads_variant": 5,
+    "picard": "/hwfssz1/ST_OCEAN/USER/guojiao1/guojiao/software/picard-tools-2.2.2/picard.jar",
+    "gatk": "/hwfssz1/ST_OCEAN/USER/guojiao1/app/miniconda/opt/gatk-3.5/GenomeAnalysisTK.jar",
+    "knownsites": "/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/shell_scripts/Ex1_alignment_of_paired_short_reads/work_dir/example/variants_21.vcf",
+    "IndelRealignment": "",
+    "CleanSam": "",
+    "ref_genome_dict":"/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/example_small/Homo_sapiens.GRCh37.75.cdna.all.dict",
+    "java_opts": "\"-Xms40g -Xmx40g\""
+  }
+}

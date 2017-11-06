@@ -1,0 +1,27 @@
+INFO 2017-11-05 09:47:06,869 src.utils            Running RNASeqPipeline 0.2.1
+INFO 2017-11-05 09:47:06,869 src.utils            Command-line /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/scripts/run_rnacocktail.py quantify --quantifier_idx /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/example/Homo_sapiens.GRCh37.75.cdna.21.Salmon.fmd --threads 4 --outdir /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out --workdir /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work --1 /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_1.fq.gz --2 /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_2.fq.gz --U  --libtype A --sample A1 --unzip --salmon salmon --salmon_smem_opts 
+INFO 2017-11-05 09:47:06,870 src.utils            Arguments are Namespace(1='/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_1.fq.gz', 2='/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_2.fq.gz', U='', libtype='A', mode='quantify', outdir='/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out', quantifier='Salmon-SMEM', quantifier_idx='/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/example/Homo_sapiens.GRCh37.75.cdna.21.Salmon.fmd', salmon='salmon', salmon_k=19, salmon_smem_opts='', sample='A1', start=0, threads=4, timeout=10000000, unzip=True, workdir='/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work')
+INFO 2017-11-05 09:47:06,870 src.utils            Run log will be saved in /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/logs/run-A1-quantify-20171105-094706.log
+INFO 2017-11-05 09:47:06,870 src.utils            Run in mode: quantify
+INFO 2017-11-05 09:47:06,870 src.utils            Assigned sample ID: A1
+INFO 2017-11-05 09:47:06,870 src.utils            Running quantification step using Salmon-SMEM
+INFO 2017-11-05 09:47:06,870 src.run_quantify     Running quantification (Salmon-SMEM) for A1
+INFO 2017-11-05 09:47:06,875 src.run_quantify     --------------------------STEP 0--------------------------
+INFO 2017-11-05 09:47:06,875 src.run_quantify     Task: Erase Salmon-SMEM work directory for A1 
+INFO 2017-11-05 09:47:06,875 src.run_quantify     Running "bash -c rm -rf /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/salmon_smem/A1/*" 
+INFO 2017-11-05 09:47:07,376 src.run_quantify     Done Erase Salmon-SMEM work directory for A1 
+INFO 2017-11-05 09:47:07,376 src.run_quantify     Returned code 0 (0.496951 seconds)
+INFO 2017-11-05 09:47:07,384 src.run_quantify     --------------------------STEP 1--------------------------
+INFO 2017-11-05 09:47:07,385 src.run_quantify     Task: Salmon-SMEM for A1 
+INFO 2017-11-05 09:47:07,385 src.run_quantify     Running "bash -c salmon quant -i /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/example/Homo_sapiens.GRCh37.75.cdna.21.Salmon.fmd  -p 4 -k 19 -l A -1 <(gunzip -c /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_1.fq.gz) -2 <(gunzip -c /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/A1_2.fq.gz) -o /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/salmon_smem/A1" 
+INFO 2017-11-05 09:49:32,143 src.run_quantify     Done Salmon-SMEM for A1 
+INFO 2017-11-05 09:49:32,145 src.run_quantify     Returned code 0 (144.741 seconds)
+INFO 2017-11-05 09:49:32,146 src.run_quantify     --------------------------STEP 2--------------------------
+INFO 2017-11-05 09:49:32,147 src.run_quantify     Task: Copy predictions to output directory for A1. 
+INFO 2017-11-05 09:49:32,147 src.run_quantify     Running "cp /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/salmon_smem/A1/quant.sf /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out/salmon_smem/A1/quant.sf" 
+INFO 2017-11-05 09:49:32,218 src.run_quantify     Done Copy predictions to output directory for A1. 
+INFO 2017-11-05 09:49:32,219 src.run_quantify     Returned code 0 (0.056221 seconds)
+INFO 2017-11-05 09:49:32,219 src.run_quantify     Salmon-SMEM was successfull!
+INFO 2017-11-05 09:49:32,219 src.run_quantify     Output expressions: /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out/salmon_smem/A1/quant.sf
+INFO 2017-11-05 09:49:32,220 src.utils            Run log is saved in /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/logs/run-A1-quantify-20171105-094706.log
+INFO 2017-11-05 09:49:32,220 src.utils            All Done!

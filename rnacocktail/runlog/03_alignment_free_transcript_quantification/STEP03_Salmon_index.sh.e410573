@@ -1,0 +1,24 @@
+Version Info: Could not resolve upgrade information in the alotted time.
+Check for upgrades manually at https://combine-lab.github.io/salmon
+outputPrefix = "/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/example/Homo_sapiens.GRCh37.75.cdna.21.Salmon.fmd/bwaidx"
+[2017-11-05 09:17:33.957] [jLog] [info] building index
+[bwa_index] Pack FASTA... 12.22 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=574327082, availableWord=52411576
+[BWTIncConstructFromPacked] 10 iterations done. 84023018 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 157561482 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 222918666 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 281004266 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 332626890 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 378505178 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 419277882 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 455512762 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 487714378 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 516331258 characters processed.
+[BWTIncConstructFromPacked] 110 iterations done. 541761946 characters processed.
+[BWTIncConstructFromPacked] 120 iterations done. 564360778 characters processed.
+[bwa_index] 1309.89 seconds elapse.
+[bwa_index] Update BWT... 5.13 sec
+[bwa_index] Pack forward-only FASTA... 7.70 sec
+[bwa_index] Construct SA from BWT and Occ... 153.91 sec
+[2017-11-05 09:43:04.238] [jLog] [info] done building index

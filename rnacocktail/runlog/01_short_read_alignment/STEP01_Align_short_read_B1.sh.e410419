@@ -1,0 +1,62 @@
+INFO 2017-11-05 09:11:37,159 src.utils            Running RNASeqPipeline 0.2.1
+INFO 2017-11-05 09:11:37,160 src.utils            Command-line /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/scripts/run_rnacocktail.py align --align_idx /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/example/Homo_sapiens.GRCh37.75.dna.chromosome.21.HISAT2 --outdir /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out --workdir /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work --threads 5 --ref_gtf /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/example_small/Homo_sapiens.GRCh37.75.gtf --1 /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/B1_1.fq.gz --2 /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/B1_2.fq.gz --U  --sra  --sample B1 --hisat2_opts 
+INFO 2017-11-05 09:11:37,160 src.utils            Arguments are Namespace(1='/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/B1_1.fq.gz', 2='/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/B1_2.fq.gz', U='', align_idx='/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/example/Homo_sapiens.GRCh37.75.dna.chromosome.21.HISAT2', hisat2='hisat2', hisat2_opts='', hisat2_sps='hisat2_extract_splice_sites.py', mode='align', outdir='/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out', ref_gtf='/hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/example_small/Homo_sapiens.GRCh37.75.gtf', sample='B1', samtools='samtools', sr_aligner='HISAT2', sra='', start=0, threads=5, timeout=10000000, workdir='/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work')
+INFO 2017-11-05 09:11:37,160 src.utils            Run log will be saved in /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/logs/run-B1-align-20171105-091137.log
+INFO 2017-11-05 09:11:37,160 src.utils            Run in mode: align
+INFO 2017-11-05 09:11:37,160 src.utils            Assigned sample ID: B1
+INFO 2017-11-05 09:11:37,160 src.utils            Running align step using HISAT2
+INFO 2017-11-05 09:11:37,161 src.run_sr_align     Running alignment (HISAT2) for B1
+INFO 2017-11-05 09:11:37,168 src.run_sr_align     --------------------------STEP 0--------------------------
+INFO 2017-11-05 09:11:37,169 src.run_sr_align     Task: Erase HISAT2 work directory for B1 
+INFO 2017-11-05 09:11:37,169 src.run_sr_align     Running "bash -c rm -rf /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/*" 
+INFO 2017-11-05 09:11:38,473 src.run_sr_align     Done Erase HISAT2 work directory for B1 
+INFO 2017-11-05 09:11:38,474 src.run_sr_align     Returned code 0 (1.30037 seconds)
+INFO 2017-11-05 09:11:38,478 src.run_sr_align     --------------------------STEP 1--------------------------
+INFO 2017-11-05 09:11:38,485 src.run_sr_align     Task: compute --known-splicesite-infile for HISAT2 
+INFO 2017-11-05 09:11:38,485 src.run_sr_align     Running "bash -c hisat2_extract_splice_sites.py /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/example_small/Homo_sapiens.GRCh37.75.gtf" 
+INFO 2017-11-05 09:12:14,299 src.run_sr_align     Done compute --known-splicesite-infile for HISAT2 
+INFO 2017-11-05 09:12:14,300 src.run_sr_align     Returned code 0 (35.8009 seconds)
+INFO 2017-11-05 09:12:14,301 src.run_sr_align     --------------------------STEP 2--------------------------
+INFO 2017-11-05 09:12:14,302 src.run_sr_align     Task: HISAT2 for B1 
+INFO 2017-11-05 09:12:14,303 src.run_sr_align     Running "bash -c hisat2  --dta --rg-id hisat2 --rg SM:B1 --threads 5 --known-splicesite-infile /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/known-splicesite.txt  -x /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/example/Homo_sapiens.GRCh37.75.dna.chromosome.21.HISAT2 -1 /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/B1_1.fq.gz -2 /hwfssz1/ST_OCEAN/USER/guojiao1/app/rnacocktail-0.2.1/test/B1_2.fq.gz -S /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/alignments.sam --novel-splicesite-outfile /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/splicesites.tab 2>/hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1hisat2_bam.log" 
+INFO 2017-11-05 09:12:19,534 src.run_sr_align     Done HISAT2 for B1 
+INFO 2017-11-05 09:12:19,534 src.run_sr_align     Returned code 0 (5.21447 seconds)
+INFO 2017-11-05 09:12:19,535 src.run_sr_align     --------------------------STEP 3--------------------------
+INFO 2017-11-05 09:12:19,535 src.run_sr_align     Task: converting SAM to BAM for B1 
+INFO 2017-11-05 09:12:19,536 src.run_sr_align     Running "bash -c samtools view -Su /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/alignments.sam -@ 5 -o /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/alignments.bam" 
+INFO 2017-11-05 09:12:20,945 src.run_sr_align     Done converting SAM to BAM for B1 
+INFO 2017-11-05 09:12:20,946 src.run_sr_align     Returned code 0 (1.39818 seconds)
+INFO 2017-11-05 09:12:20,946 src.run_sr_align     --------------------------STEP 4--------------------------
+INFO 2017-11-05 09:12:20,946 src.run_sr_align     Task: sorting BAM for B1 
+INFO 2017-11-05 09:12:20,946 src.run_sr_align     Running "bash -c samtools sort  -@ 5 /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/alignments.bam -o /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/alignments.sorted.bam" 
+INFO 2017-11-05 09:12:22,966 src.run_sr_align     Done sorting BAM for B1 
+INFO 2017-11-05 09:12:22,967 src.run_sr_align     Returned code 0 (2.00725 seconds)
+INFO 2017-11-05 09:12:22,967 src.run_sr_align     --------------------------STEP 5--------------------------
+INFO 2017-11-05 09:12:22,968 src.run_sr_align     Task: Converting junctions to BED for B1 
+INFO 2017-11-05 09:12:22,968 src.run_sr_align     Running "bash -c hisat2_jun2bed.py /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/splicesites.tab /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/splicesites.bed " 
+INFO 2017-11-05 09:12:23,246 src.run_sr_align     Done Converting junctions to BED for B1 
+INFO 2017-11-05 09:12:23,246 src.run_sr_align     Returned code 0 (0.264579 seconds)
+INFO 2017-11-05 09:12:23,247 src.run_sr_align     --------------------------STEP 6--------------------------
+INFO 2017-11-05 09:12:23,247 src.run_sr_align     Task: Clean temp alignment files for B1 
+INFO 2017-11-05 09:12:23,248 src.run_sr_align     Running "bash -c rm /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/alignments.sam /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/alignments.bam" 
+INFO 2017-11-05 09:12:23,340 src.run_sr_align     Done Clean temp alignment files for B1 
+INFO 2017-11-05 09:12:23,341 src.run_sr_align     Returned code 0 (0.0795169 seconds)
+INFO 2017-11-05 09:12:23,345 src.run_sr_align     --------------------------STEP 7--------------------------
+INFO 2017-11-05 09:12:23,345 src.run_sr_align     Task: Copy predictions to output directory for B1. 
+INFO 2017-11-05 09:12:23,346 src.run_sr_align     Running "cp /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/alignments.sorted.bam /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out/hisat2/B1/alignments.sorted.bam" 
+INFO 2017-11-05 09:12:23,885 src.run_sr_align     Done Copy predictions to output directory for B1. 
+INFO 2017-11-05 09:12:23,885 src.run_sr_align     Returned code 0 (0.527013 seconds)
+INFO 2017-11-05 09:12:23,886 src.run_sr_align     Task: Copy predictions to output directory for B1. 
+INFO 2017-11-05 09:12:23,886 src.run_sr_align     Running "cp /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/splicesites.tab /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out/hisat2/B1/splicesites.tab" 
+INFO 2017-11-05 09:12:24,221 src.run_sr_align     Done Copy predictions to output directory for B1. 
+INFO 2017-11-05 09:12:24,222 src.run_sr_align     Returned code 0 (0.320379 seconds)
+INFO 2017-11-05 09:12:24,223 src.run_sr_align     Task: Copy predictions to output directory for B1. 
+INFO 2017-11-05 09:12:24,223 src.run_sr_align     Running "cp /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/hisat2/B1/splicesites.bed /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out/hisat2/B1/splicesites.bed" 
+INFO 2017-11-05 09:12:24,586 src.run_sr_align     Done Copy predictions to output directory for B1. 
+INFO 2017-11-05 09:12:24,587 src.run_sr_align     Returned code 0 (0.350592 seconds)
+INFO 2017-11-05 09:12:24,587 src.run_sr_align     HISAT2 was successfull!
+INFO 2017-11-05 09:12:24,587 src.run_sr_align     Output alignment: /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out/hisat2/B1/alignments.sorted.bam
+INFO 2017-11-05 09:12:24,587 src.run_sr_align     Output junction tab: /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out/hisat2/B1/splicesites.tab
+INFO 2017-11-05 09:12:24,588 src.run_sr_align     Output junction bed: /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/out/hisat2/B1/splicesites.bed
+INFO 2017-11-05 09:12:24,588 src.utils            Run log is saved in /hwfssz1/ST_OCEAN/USER/guojiao1/Project/RNAcocktail_test/work/logs/run-B1-align-20171105-091137.log
+INFO 2017-11-05 09:12:24,588 src.utils            All Done!
