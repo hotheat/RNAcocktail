@@ -20,7 +20,7 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 
 ## 使用说明
 
-1. 将  ( 以下称 ./ ) 拷贝至自己的工作目录中
+1. 将 */*/*/guojiao1/Project/RNAcocktail_test/rnacocktail/ ( 以下称 ./ ) 拷贝至自己的工作目录中
 2. 在 ./configure/configure_file.json 中配置不同步骤相应的参数
 3. 在 ./configure/seq.txt 中配置 reads 路径
 4. 运行 ``` sh template.sh``` 将在 ./RNA_pipeline/ 中 分别生成 6 个对应目录
