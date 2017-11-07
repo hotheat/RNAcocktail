@@ -1,4 +1,4 @@
-# RNAcocktail 流程使用说明
+# RNAcocktail 2.0 流程使用说明
 Publication
 
 > If you use RNACocktail in your work, please cite the following:  
