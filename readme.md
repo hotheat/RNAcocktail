@@ -32,15 +32,15 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
     - 06_variant_calling/
 5. 可以在 ./runlog 分别对应的目录中投递任务
 
-## 目录说明
+## configure 目录说明
 
-1. ./configure/
+1. ./configure/  
     configure 目录中共有 3 个文件：conda_rnacock_simple.txt, seq_name.txt, configure_file.json
 
     - conda_rnacock_simple.txt  
     含有流程中环境 rnacock_2 用到的主要软件，不需要改动。  
     如需重新搭建，使用  
-    ```conda install --file ./conda_rnacock_simple.txt ```  
+    ```conda install --file ./configure/conda_rnacock_simple.txt ```  
     - seq.name.txt  
     支持 PE , SE reads 及 SRA accession numbers (DRR/SSR/ERR)输入，不同样本以换行符分隔,  
     PE reads: _1.fastq.gz 和 _2.fastq.gz 以 , 分隔。  
