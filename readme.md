@@ -1,4 +1,6 @@
 # RNAcocktail 2.0 流程使用说明
+此流程在 2017.07 发表在 NC 上的 RNA-seq 流程 RNAcocktail 重新对二代测序的 alignment, transcriptome reconstruction, denovo transcriptome assembly, alignment-free quantification, differential expression analysis, variant calling 进行封装， 并用 conda 进行环境管理。
+
 Publication
 
 > If you use RNACocktail in your work, please cite the following:  
