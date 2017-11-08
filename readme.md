@@ -53,60 +53,67 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 ## configure.json 参数说明
 - General_Arguement (流程中通用参数)  
 需要设置的参数:  
-1. --sample 样品编号  
+1. sample 
+样品编号  
 例 "A1,A2 B1,B2"  A, B 代表不同样品, A1, A2 为重复样本  
 若没有重复样本，则以空格分隔
-2. --threads  
+2. threads  
 Number of threads to use
-3. --start  
+3. start  
 从流程中某一步开始运行(默认为 0)
-4. --work_dir  
+4. work_dir  
 结果目录及其他文件目录(可写入)
-5. --out_dir  
+5. out_dir  
 结果文件目录(可写入)
-6. --template_path  
-不能改动!
+
 - Short_Read_Alignment
 1. ref_genome_fa  
 参考基因组
 2. align_idx  
 index 目录
-3. --ref_gtf  
+3. ref_gtf  
 参考基因组 .gtf 文件, 若无，此项设为 ''  
-4. --hisat2_sps  
+4. hisat2_sps  
 若没有 ref_gtf, 此项设为 ''
 - Short_Read_Transcriptome_Reconstruction  
 无需设置，参数自动生成，如需更改 stringtie 参数，请在 stringtie_opts 中添加
 - Alignment_free_quantification
-1. --threads_salmon  
+1. threads_salmon  
 salmon 运行 threads 数量，至少设为 4
-2. --transcriptome_fa  
+2. transcriptome_fa  
 参考转录组 fa 文件
-3. --quantifier_idx  
+3. quantifier_idx  
 salmon index 索引位置
-4. --salmon_k  
+4. salmon_k  
 SMEM's smaller than this size will not be considered by Salmon. (default 19).  
-5. --libtype  
+5. libtype  
 Format string describing the library type. (For Salmon check [here](http://salmon.readthedocs.io/en/latest/library_type.html#fraglibtype))  
 - Differential_Analysis
-1. --mincount  
+1. mincount  
 Minimum read counts per transcripts. Differential analysis pre-filtering step removes transcripts that have less than this number of reads. (default 2)  
-2. --alpha_float  
+2. alpha_float  
 Adjusted p-value significance level for differential analysis. (default 0.05)  
 - De_novo_assembly
-1. --assembly_hash  
+1. assembly_hash  
 Odd integer, or a comma separated list of odd integers that specify the assembly has length (for Oases/Velvet).  
-2. --read_type  
+2. read_type  
 Input sequence read type for de novo assembly Options: __short__, __shortPaired__, __short2, __shortPaired2__, __long__, __longPaired__, reference. (Check here for [description](https://www.ebi.ac.uk/~zerbino/velvet/Manual.pdf)) (default short)
-3. --file_format  
+3. file_format  
 Input file format for de novo assembly Options: fasta, fastq, raw, fasta.gz, fastq.gz, raw.gz, sam, bam, fmtAuto. (default fasta)
 - Variant Calling
-1. --knownsites  
+1. knownsites  
 A database of known polymorphic sites (e.g. dbSNP). Used in GATK BaseRecalibrator and RealignerTargetCreator. NOTE: to run BaseRecalibrator step knownsites should be provided.
 2. ref_genome_dict  
 将 ref_genome_fa 格式 *.fa 中 (.fa) 替换为 (.dict).
 
 其他参数设置详见[流程网址](https://bioinform.github.io/rnacocktail/)
+
+- Template_configure
+模版配置参数，无需改动!
+1. template_path
+模版路径
+2. template_header
+shell header
 
 
 
