@@ -1,5 +1,6 @@
 # RNAcocktail 2.0 流程使用说明
-此流程在 2017.07 发表在 NC 上的 RNA-seq 流程 RNAcocktail 重新对二代测序的 alignment, transcriptome reconstruction, denovo transcriptome assembly, alignment-free quantification, differential expression analysis, variant calling 进行封装， 并用 conda 进行环境管理。
+此流程在 2017.07 发表在 NC 上的 RNA-seq 流程.  
+RNAcocktail 2.0 重新对二代测序的 alignment, transcriptome reconstruction, denovo transcriptome assembly, alignment-free quantification, differential expression analysis, variant calling 进行封装， 并用 conda 进行环境管理。
 
 Publication
 
@@ -43,6 +44,7 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
     含有流程中环境 rnacock_2 用到的主要软件，不需要改动。  
     如需重新搭建，使用  
     ```conda install --file ./configure/conda_rnacock_simple.txt ```  
+    为避免冲突，建议新建一个环境单独安装 R 包 (conda create -n r_test bioconductor-deseq2 r-readr bioconductor-tximport)
     - seq.name.txt  
     支持 PE , SE reads 及 SRA accession numbers (DRR/SSR/ERR)输入，不同样本以换行符分隔,  
     PE reads: _1.fastq.gz 和 _2.fastq.gz 以 , 分隔。  
