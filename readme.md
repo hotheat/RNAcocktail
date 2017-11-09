@@ -1,5 +1,5 @@
 # RNAcocktail 2.0 流程使用说明
-此流程在 2017.07 发表在 NC 上的 RNA-seq 流程.  
+此流程是 2017.07 发表在 NC 上的 RNA-seq 流程.  
 RNAcocktail 2.0 重新对二代测序的 alignment, transcriptome reconstruction, denovo transcriptome assembly, alignment-free quantification, differential expression analysis, variant calling 进行封装， 并用 conda 进行环境管理。
 
 Publication
@@ -27,11 +27,11 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 2. 在 ./configure/configure_file.json 中配置不同步骤相应的参数
 3. 在 ./configure/seq.txt 中配置 reads 路径
 4. 运行 ``` sh template.sh``` 将在 ./RNA_pipeline/ 中 分别生成 6 个对应目录
-    - 01_short_read_alignment/
-    - 02_short_read_reconstruction/
+    - 01_short_read_alignment/  (qsub -cwd -l vf=25g -q st.q -P P17Z10200N0003 -l num_proc=3 )
+    - 02_short_read_reconstruction/  (qsub -cwd -l vf=5g -q st.q -P P17Z10200N0003 -l num_proc=3) 
     - 03_alignment_free_transcript_quantification/
     - 04_differential_analysis/
-    - 05_denovo_assembly/
+    - 05_denovo_assembly/ (根据基因组大小而定，基因组超过 2G 时, 峰值内存 200 G)
     - 06_variant_calling/
 5. 可以在 ./runlog 分别对应的目录中投递任务
 
@@ -58,7 +58,7 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 例 "A1,A2 B1,B2"  A, B 代表不同样品, A1, A2 为重复样本  
 若没有重复样本，则以空格分隔
 2. threads  
-Number of threads to use
+Number of threads to use (默认为 3)
 3. start  
 从流程中某一步开始运行(默认为 0)
 4. work_dir  
