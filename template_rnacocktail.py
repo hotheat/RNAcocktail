@@ -42,17 +42,10 @@ def mkdir(path):
         return False
 
 
-def update_dict(dict1, dict2):
-    dict = dict1.copy()
-    dict.update(dict2)
-    return dict
-
-
 def update_dicts(data):
     united_dict = {}
     for k, v in data.items():
-        tmp_dict = update_dict(united_dict, v)
-        united_dict = tmp_dict
+        united_dict.update(v)
     return united_dict
 
 
@@ -67,9 +60,7 @@ def extrat_pair_reads(seq_name):
 
 
 def type_seq(seq_name):
-    # log('type seq', seq_name)
     seq_name = load_file(seq_name).split('\n')
-    # log('seq_ name2', seq_name)
     for i in seq_name:
         if ',' in i and len(i.split(',')) >= 2:
             if ".fq" in i and ".fq" in i:
