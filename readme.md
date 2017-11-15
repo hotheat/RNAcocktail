@@ -115,6 +115,10 @@ A database of known polymorphic sites (e.g. dbSNP). Used in GATK BaseRecalibrato
 2. template_header
 shell header
 
+#  2017.11.15
+
+增加 -s 参数，指定每个部分开始的 step
+
 
 
 
