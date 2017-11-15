@@ -3,10 +3,15 @@ from jinja2 import Environment, FileSystemLoader
 import json
 import os
 import time
-
+import argparse
 
 
 def log(*args, **kwargs):
+    """
+    用这个 log 替代 print
+    time.time() 返回 unix time
+    如何把 unix time 转化为人类能看得懂的格式
+    """
     format = '%Y/%m/%d %H:%M:%S'
     value = time.localtime(int(time.time()))
     dt = time.strftime(format, value)
@@ -303,13 +308,24 @@ def variant_calling(var_call_mode, united_dict, mkpath):
         write_generated_sh(var_call_mode, var_call_sh, var_call_argv, mkpath)
 
 
+def get_arg():
+    parse = argparse.ArgumentParser(
+        description='Choose the running step of each section', )
+    parse.add_argument("-s", dest="start", help="which step to run in each section", default=0, type=int)
+    arg = parse.parse_args().__dict__
+    return arg
+
+
 if __name__ == '__main__':
+    arg = get_arg()
     # 读取 json 配置文件，并合并所有字典
     data = json.loads(load_file('./configure/configure_file.json'))
     united_dict = update_dicts(data)
+    for i, v in arg.items():
+        united_dict[i] = arg[i]
+
     template_dic = united_dict['template_path']
     # 取出/template 路径下所有的模板
-
     all_templates = os.listdir(template_dic)
     all_templates.sort()
 
