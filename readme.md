@@ -40,7 +40,7 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 |     内容         |    方法 1    | 方法 2 |
 | :--------------: | :---------: | :----------: |
 |     转录本定量    |    01-02 (stringtie)   | 03 (salmon) |
-|      差异表达     |   01-02-04 (stringtie)<br>根据是否有参考基因组 gtf 选择 /STEP04_02 及 /STEP04_03 | 03-04(/STEP04_01)  |
+|      差异表达     |   01-02-04 (stringtie)<br>根据是否有参考基因组 gtf 选择 /STEP04_02(有) 及 /STEP04_03(无) | 03-04(/STEP04_01)  |
 |     转录本组装    |   01-02 (stringtie)有参组装     | 05 (oases) 无参组装 |
 |   Call variant   | 01-02-06 (GATK) | -|
 
