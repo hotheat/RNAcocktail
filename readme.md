@@ -21,6 +21,8 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 | differential expression analysis |  DESeq2     | __differential expressions__: deseq2_res.tab
 |       variant calling            |   GATK      | __variants__: variants_filtered.vcf |
 
+
+
 ## 使用说明
 
 1. 将 */USER/guojiao1/Project/RNAcocktail_test/rnacocktail/ ( 以下称 ./ ) 拷贝至自己的工作目录中
@@ -34,6 +36,13 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
     - 05_denovo_assembly/ (根据基因组大小而定，基因组超过 2G 时, 峰值内存 200 G)
     - 06_variant_calling/
 5. 可以在 ./runlog 分别对应的目录中投递任务
+
+|     内容         |    方法 1    | 方法 2 |
+| :--------------: | :---------: | :----------: |
+|     转录本定量    |    01-02 (stringtie)   | 03 (salmon) |
+|      差异表达     |   01-02-04 (stringtie)<br>根据是否有参考基因组 gtf 选择 /STEP04_02 及 /STEP04_03 | 03-04(/STEP04_01)  |
+|     转录本组装    |   01-02 (stringtie)有参组装     | 05 (oases) 无参组装 |
+|   Call variant   | 01-02-06 (GATK) | -|
 
 ## configure 目录说明
 
