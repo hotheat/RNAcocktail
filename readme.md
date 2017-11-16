@@ -124,10 +124,13 @@ A database of known polymorphic sites (e.g. dbSNP). Used in GATK BaseRecalibrato
 2. template_header
 shell header
 
-#  2017.11.15
+#  注意事项
 
-增加 -s 参数，指定每个部分开始的 step
+1. Oases 无参组装运行完后会在  ./workdir/oases/ 产生临时文件，  ./workdir/oases/Graph2 文件较大，结束后请手动删除。
 
+#  更新说明
+
+- 2017.11.15  增加 -s 参数，指定每个部分开始的 step
 
 
 
