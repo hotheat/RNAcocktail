@@ -26,7 +26,7 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 ## 使用说明
 
 1. 将 */USER/guojiao1/Project/RNAcocktail_test/rnacocktail/ ( 以下称 ./ ) 拷贝至自己的工作目录中
-2. 在 ./configure/configure_file.json 中配置不同步骤相应的参数
+2. 在 ./configure/general_parameters.json 中配置基本参数
 3. 在 ./configure/seq.txt 中配置 reads 路径
 4. 运行 ``` sh template.sh``` 将在 ./RNA_pipeline/ 中 分别生成 6 个对应目录
     - 01_short_read_alignment/  (qsub -cwd -l vf=25g -q st.q -P P17Z10200N0003 -l num_proc=3 )
@@ -49,16 +49,21 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 1. ./configure/  
     configure 目录中共有 3 个文件：conda_rnacock_simple.txt, seq_name.txt, configure_file.json
 
-    - conda_rnacock_simple.txt  
+    - general_parameters.json —— 基本参数设置  
+
+    - advanced_parameters.json —— 高级参数设置  
+
+    - seq.name.txt —— reads 目录  
+    支持 PE , SE reads 及 SRA accession numbers (DRR/SSR/ERR)输入，不同样本以换行符分隔,  
+    PE reads: _1.fastq.gz 和 _2.fastq.gz 以 , 分隔。  
+
+    - conda_rnacock_simple.txt （搭建流程用）  
     含有流程中环境 rnacock_2 用到的主要软件，不需要改动。  
     如需重新搭建，使用  
     ```conda install --file ./configure/conda_rnacock_simple.txt ```  
     为避免冲突，建议新建一个环境单独安装 R 包 (conda create -n r-test bioconductor-deseq2=1.16.1 r-readr bioconductor-tximport)
-    - seq.name.txt —— reads 目录  
-    支持 PE , SE reads 及 SRA accession numbers (DRR/SSR/ERR)输入，不同样本以换行符分隔,  
-    PE reads: _1.fastq.gz 和 _2.fastq.gz 以 , 分隔。  
-    - configure.json —— 流程参数设置  
-    json 文件说明, 见[链接]( http://www.w3school.com.cn/json/json_syntax.asp ) (字符串使用 双引号("")， {...} 内最后一个元素不能加",")
+
+    
 ## configure.json 参数说明
 - General_Arguement (流程中通用参数)  
 需要设置的参数:  
@@ -112,8 +117,6 @@ Input file format for de novo assembly Options: fasta, fastq, raw, fasta.gz, fas
 - Variant Calling
 1. knownsites  
 A database of known polymorphic sites (e.g. dbSNP). Used in GATK BaseRecalibrator and RealignerTargetCreator. NOTE: to run BaseRecalibrator step knownsites should be provided.
-2. ref_genome_dict  
-将 ref_genome_fa 格式 *.fa 中 (.fa) 替换为 (.dict).
 
 其他参数设置详见[流程网址](https://bioinform.github.io/rnacocktail/)
 
@@ -126,12 +129,18 @@ shell header
 
 #  注意事项
 
+1. json 文件说明, 见[链接]( http://www.w3school.com.cn/json/json_syntax.asp ) (字符串使用 双引号("")， {...} 内最后一个元素不能加",")
+
+2. 除特殊情况外，只进行基本参数设置即可
+
+3. Hisat 比对默认索引文件格式与 general_parameters.json 中的 ref_genome_fa 有关， 可以在 advanced_parameters.json 中配置
+4. salmon 比对默认索引文件格式与 general_parameters.json 中的 transcriptome_fa 有关，可以在 advanced_parameters.json 中配置
 
 
 #  更新说明
 
 - 2017.11.15  增加 -s 参数，指定每个部分开始的 step
-- 2017.11.17  添加删除 oases 结束后产生较大的临时文件 (Graph2)
+- 2017.11.17  添加功能：删除 oases 结束后产生较大的临时文件 (Graph2等)
 
 
 
