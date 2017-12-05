@@ -53,11 +53,11 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
     含有流程中环境 rnacock_2 用到的主要软件，不需要改动。  
     如需重新搭建，使用  
     ```conda install --file ./configure/conda_rnacock_simple.txt ```  
-    为避免冲突，建议新建一个环境单独安装 R 包 (conda create -n r_test bioconductor-deseq2 r-readr bioconductor-tximport bioconductor-genomeinfodb)
-    - seq.name.txt  
+    为避免冲突，建议新建一个环境单独安装 R 包 (conda create -n r-test bioconductor-deseq2=1.16.1 r-readr bioconductor-tximport)
+    - seq.name.txt —— reads 目录
     支持 PE , SE reads 及 SRA accession numbers (DRR/SSR/ERR)输入，不同样本以换行符分隔,  
     PE reads: _1.fastq.gz 和 _2.fastq.gz 以 , 分隔。  
-    - configure.json  
+    - configure.json —— 流程参数设置
     json 文件说明, 见[链接]( http://www.w3school.com.cn/json/json_syntax.asp ) (字符串使用 "..."， {...} 内最后一个元素不能加",")
 ## configure.json 参数说明
 - General_Arguement (流程中通用参数)  
@@ -126,7 +126,7 @@ shell header
 
 #  注意事项
 
-1. Oases 无参组装运行完后会在  ./workdir/oases/ 产生临时文件，  ./workdir/oases/Graph2 文件较大，结束后请手动删除。
+
 
 #  更新说明
 
