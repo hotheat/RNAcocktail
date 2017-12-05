@@ -33,7 +33,7 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
     - 02_short_read_reconstruction/  (qsub -cwd -l vf=5g -q st.q -P P17Z10200N0003 -l num_proc=3) 
     - 03_alignment_free_transcript_quantification/
     - 04_differential_analysis/
-    - 05_denovo_assembly/ (根据基因组大小而定，基因组超过 2G 时, 峰值内存 200 G)
+    - 05_denovo_assembly/ ( 峰值内存大小与转录组数据有关 )
     - 06_variant_calling/
 5. 可以在 ./runlog 分别对应的目录中投递任务
 
