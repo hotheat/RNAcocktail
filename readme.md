@@ -135,7 +135,7 @@ shell header
 
 3. Hisat 比对默认索引文件格式与 general_parameters.json 中的 ref_genome_fa 有关， 可以在 advanced_parameters.json 中配置
 4. salmon 比对默认索引文件格式与 general_parameters.json 中的 transcriptome_fa 有关，可以在 advanced_parameters.json 中配置
-
+5. work_dir 目录权限必须是 可写入
 
 #  更新说明
 
