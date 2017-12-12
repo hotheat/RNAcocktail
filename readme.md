@@ -47,7 +47,7 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 ## configure 目录说明
 
 1. ./configure/  
-    configure 目录中共有 3 个文件：conda_rnacock_simple.txt, seq_name.txt, configure_file.json
+    configure 目录中共有 4 个文件：general_parameters.json, advanced_parameters.json, seq_name.txt, conda_rnacock_simple.txt
 
     - general_parameters.json —— 基本参数设置  
 
