@@ -77,8 +77,7 @@ Number of threads to use (默认为 3)
 从流程中某一步开始运行(默认为 0)
 4. work_dir  
 结果目录及其他文件目录(可写入)
-5. out_dir  
-结果文件目录(可写入)
+
 
 - Short_Read_Alignment
 1. ref_genome_fa  
@@ -90,7 +89,8 @@ index 目录
 4. hisat2_sps  
 若没有 ref_gtf, 此项设为 ''
 - Short_Read_Transcriptome_Reconstruction  
-无需设置，参数自动生成，如需更改 stringtie 参数，请在 stringtie_opts 中添加
+1. stringtie_opts  
+stringtie 参数
 - Alignment_free_quantification
 1. threads_salmon  
 salmon 运行 threads 数量，至少设为 4
