@@ -25,12 +25,12 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 
 ## 使用说明
 
-1. 将 */USER/guojiao1/Project/RNAcocktail_test/rnacocktail/ ( 以下称 ./ ) 拷贝至自己的工作目录中
-2. 在 ./configure/general_parameters.json 中配置基本参数
+1. 将 */USER/guojiao1/Project/RNAcocktail_test/rnacocktail/ ( 以下称 ./ ) 拷贝至自己的工作目录中  
+2. 在 ./configure/general_parameters.json 中配置基本参数 (如有其他参数需求, 请在 advanced_parameters.json 中设置)  
 3. 在 ./configure/seq.txt 中配置 reads 路径
 4. 运行 ``` sh template.sh``` 将在 ./RNA_pipeline/ 中 分别生成 6 个对应目录
-    - 01_short_read_alignment/  (qsub -cwd -l vf=25g -q st.q -P P17Z10200N0003 -l num_proc=3 )
-    - 02_short_read_reconstruction/  (qsub -cwd -l vf=5g -q st.q -P P17Z10200N0003 -l num_proc=3) 
+    - 01_short_read_alignment/  (vf=25g)
+    - 02_short_read_reconstruction/  (vf=5g) 
     - 03_alignment_free_transcript_quantification/
     - 04_differential_analysis/
     - 05_denovo_assembly/ ( 峰值内存大小与转录组数据有关 )
