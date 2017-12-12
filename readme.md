@@ -122,9 +122,9 @@ A database of known polymorphic sites (e.g. dbSNP). Used in GATK BaseRecalibrato
 
 - Template_configure
 模版配置参数，无需改动!
-1. template_path
+1. template_path  
 模版路径
-2. template_header
+2. template_header:  
 shell header
 
 #  注意事项
