@@ -134,7 +134,11 @@ shell header
 2. 除特殊情况外，只进行基本参数设置即可
 
 3. Hisat 比对默认索引文件默认在 general_parameters.json 中的 ref_genome_fa 目录中生成， 也可以在 advanced_parameters.json 中配置
+
+
 4. salmon 比对默认索引文件默认在 general_parameters.json 中的 transcriptome_fa 目录中生成，也可以在 advanced_parameters.json 中配置
+
+
 5. work_dir 目录权限必须是 可写入
 
 #  更新说明
