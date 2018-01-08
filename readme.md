@@ -129,17 +129,17 @@ shell header
 
 #  注意事项
 
-1. json 文件说明, 见[链接]( http://www.w3school.com.cn/json/json_syntax.asp ) (字符串使用 双引号("")， {...} 内最后一个元素不能加",")
+1. json 文件说明, 见[链接]( http://www.w3school.com.cn/json/json_syntax.asp ) (字符串使用 双引号("")， {...} 内最后一个元素不能加",").
 
-2. 除特殊情况外，只进行基本参数设置即可
+2. 除特殊情况外，只进行基本参数设置即可.
 
-3. Hisat 比对默认索引文件默认在 general_parameters.json 中的 ref_genome_fa 目录中生成， 也可以在 advanced_parameters.json 中配置
-
-
-4. salmon 比对默认索引文件默认在 general_parameters.json 中的 transcriptome_fa 目录中生成，也可以在 advanced_parameters.json 中配置
+3. Hisat 比对默认索引文件默认在 general_parameters.json 中的 ref_genome_fa 目录中生成， 也可以在 advanced_parameters.json 中配置.
 
 
-5. work_dir 目录权限必须是 可写入
+4. salmon 比对默认索引文件默认在 general_parameters.json 中的 transcriptome_fa 目录中生成，也可以在 advanced_parameters.json 中配置.
+
+
+5. work_dir 目录权限必须是 可写入.
 
 #  更新说明
 
