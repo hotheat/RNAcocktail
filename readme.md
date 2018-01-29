@@ -60,7 +60,7 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
     - conda_rnacock_simple.txt （搭建流程用）  
     含有流程中环境 rnacock_2 用到的主要软件，不需要改动。  
     如需重新搭建，使用  
-    ```conda create -n rnacock_2 --file ./configure/conda_rnacock_simple.txt ```  
+    ```conda env create -n rnacock_2 --file ./configure/conda_rnacock_simple.txt ```  
     为避免冲突，建议新建一个环境单独安装 R 包 (conda create -n r-test bioconductor-deseq2=1.16.1 r-readr bioconductor-tximport)
 
     
