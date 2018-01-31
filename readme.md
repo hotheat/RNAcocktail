@@ -25,7 +25,8 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 
 ## 使用说明
 
-1. 将 */USER/guojiao1/Project/RNAcocktail_test/rnacocktail/ ( 以下称 ./ ) 拷贝至自己的工作目录中  
+  */USER/guojiao1/Project/RNAcocktail_test/rnacocktail/( 以下称 ./ )  
+1. 将 ./configure 和 ./template.sh 拷贝至自己的工作目录中  
 2. 在 ./configure/general_parameters.json 中配置基本参数 (如有其他参数需求, 请在 advanced_parameters.json 中设置)  
 3. 在 ./configure/seq.txt 中配置 reads 路径
 4. 运行 ``` sh template.sh``` 将在 ./RNA_pipeline/ 中 分别生成 6 个对应目录
@@ -35,7 +36,7 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
     - 04_differential_analysis/
     - 05_denovo_assembly/ ( 峰值内存大小与转录组数据有关 )
     - 06_variant_calling/
-5. 可以在 ./runlog 分别对应的目录中投递任务
+5. 可以新建在 ./runlog 分别对应的目录中投递任务
 
 |     内容         |    方法 1    | 方法 2 |
 | :--------------: | :---------: | :----------: |
