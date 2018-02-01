@@ -25,7 +25,8 @@ Nature Communications 8, Article number: 59 (2017). doi:10.1038/s41467-017-00050
 
 ## 使用说明
 
-  */USER/guojiao1/Project/RNAcocktail_test/rnacocktail/( 以下称 ./ )  
+SZ 集群：*/USER/guojiao1/Project/RNAcocktail_test/rnacocktail/( 以下称 ./ )  
+QD 集群：*/USRS/guojiao1/pipeline/rnacocktail/RNAcocktail_test/rnacocktail/( 以下称 ./ )  
 1. 将 ./configure 和 ./template.sh 拷贝至自己的工作目录中  
 2. 在 ./configure/general_parameters.json 中配置基本参数 (如有其他参数需求, 请在 advanced_parameters.json 中设置)  
 3. 在 ./configure/seq.txt 中配置 reads 路径
