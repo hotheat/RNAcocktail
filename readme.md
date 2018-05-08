@@ -139,7 +139,6 @@ shell header
     - gene_abund.tab stringtie -A 生成基因丰度文件
 3. salmon_smem
     - quant.sf  
-
         (1) Name：提供的目标转录本 ID  
         (2) Length: 目标转录本长度  
         (3) effectiveLength: 目标转录本有效长度，考虑了插入片段长度分布和序列特异性等  
