@@ -42,28 +42,27 @@ QD 集群：*/USRS/guojiao1/pipeline/rnacocktail/RNAcocktail_test/rnacocktail/( 
 |     内容         |    方法 1    | 方法 2 |
 | :--------------: | :---------: | :----------: |
 |     转录本定量    |    01-02 (stringtie)   | 03 (salmon) |
-|      差异表达     |   01-02-04 (stringtie)<br>根据是否有参考基因组 gtf 选择 /STEP04_02(有) 及 /STEP04_03(无) | 03-04(/STEP04_01)  |
-|     转录本组装    |   01-02 (stringtie)有参组装     | 05 (oases) 无参组装 |
+|      差异表达     |   01-02-04 (stringtie)<br>根据是否有参考基因组 ref_gtf 选择 /STEP04_02(有) 及 /STEP04_03(无) | 03-04(/STEP04_01)<br>需要 ref_gtf   |
+|     转录本组装    |   01-02 (stringtie)<br>有参组装     | 05 (oases)<br>无参组装 |
 |   Call variant   | 01-02-06 (GATK) | -|
 
 ## configure 目录说明
 
-1. ./configure/  
-    configure 目录中共有 4 个文件：general_parameters.json, advanced_parameters.json, seq_name.txt, conda_rnacock_simple.txt
+configure 目录中共有 4 个文件：general_parameters.json, advanced_parameters.json, seq_name.txt, conda_rnacock_simple.txt
 
-    - general_parameters.json —— 基本参数设置  
+- general_parameters.json —— 基本参数设置  
 
-    - advanced_parameters.json —— 高级参数设置  
+- advanced_parameters.json —— 高级参数设置  
 
-    - seq.name.txt —— reads 目录  
-    支持 PE , SE reads 及 SRA accession numbers (DRR/SSR/ERR)输入，不同样本以换行符分隔,  
-    PE reads: _1.fastq.gz 和 _2.fastq.gz 以 , 分隔。  
+- seq.name.txt —— reads 目录  
+支持 PE , SE reads 及 SRA accession numbers (DRR/SSR/ERR)输入，不同样本以换行符分隔,  
+PE reads: _1.fastq.gz 和 _2.fastq.gz 以 , 分隔。  
 
-    - conda_rnacock_simple.txt （搭建流程用）  
-    含有流程中环境 rnacock_2 用到的主要软件，不需要改动。  
-    如需重新搭建，使用  
-    ```conda env create -n rnacock_2 --file ./configure/conda_rnacock_simple.txt ```  
-    为避免冲突，建议新建一个环境单独安装 R 包 (conda create -n r-test bioconductor-deseq2=1.16.1 r-readr bioconductor-tximport)
+- conda_rnacock_simple.txt （搭建流程用）  
+含有流程中环境 rnacock_2 用到的主要软件，不需要改动。  
+如需重新搭建，使用  
+```conda env create -n rnacock_2 --file ./configure/conda_rnacock_simple.txt ```  
+为避免冲突，建议新建一个环境单独安装 R 包 (conda create -n r-test bioconductor-deseq2=1.16.1 r-readr bioconductor-tximport)
 
     
 ## configure.json 参数说明
@@ -128,6 +127,37 @@ A database of known polymorphic sites (e.g. dbSNP). Used in GATK BaseRecalibrato
 模版路径
 2. template_header:  
 shell header
+
+#  输出结果说明
+
+1. hisat2
+    - alignments.sorted.bam 经过排序的 bam 文件
+    - splicesites.tab hisat2 的剪切位点信息 (包括根据参考基因组 ref_gtf 得到的剪切位点)
+    - splicesites.bed 经 hisat2_jun2bed.py 将剪切位点转换成 bed 文件
+2. stringtie
+    - transcripts.gtf 基因注释文件
+    - gene_abund.tab stringtie -A 生成基因丰度文件
+3. salmon_smem
+    - quant.sf  
+
+        (1) Name：提供的目标转录本 ID  
+        (2) Length: 目标转录本长度  
+        (3) effectiveLength: 目标转录本有效长度，考虑了插入片段长度分布和序列特异性等  
+        (4) TPM: transcripts per million，TPM 计算公式中分母是总转录本数量的统计量，而 FPKM 和 RPKM 分母仅仅代表测序深度的变化，TPM更能准确的表示转录丰度  
+        (5) Numreads salmon 估计的 map 到每个转录本的 reads 数量
+4. deseq2
+    - deseq2_res.tab  
+        (1) rownames: 基因 ID  
+        (2) baseMean: 所有样本矫正后的平均 reads 数  
+        (3) log2FoldChange: 表达量差异取 log2 后的值  
+        (4) lfcSE: standard error: condition treated vs untreated  
+        (5) stat: Wald statistic Wald检验统计量  
+        (6) pvalue: 统计学差异显著性检验指标  
+        (7) padj: 校正后的 pvalue, padj 越小,表示基因表达差异越显著
+5. oases
+    - transcripts.fa 无参组装的转录本
+
+
 
 #  注意事项
 
