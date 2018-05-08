@@ -141,16 +141,16 @@ shell header
     - quant.sf  
         (1) Name：提供的目标转录本 ID  
         (2) Length: 目标转录本长度  
-        (3) effectiveLength: 目标转录本有效长度，考虑了插入片段长度分布和序列特异性等  
-        (4) TPM: transcripts per million，TPM 计算公式中分母是总转录本数量的统计量，而 FPKM 和 RPKM 分母仅仅代表测序深度的变化，TPM更能准确的表示转录丰度  
-        (5) Numreads salmon 估计的 map 到每个转录本的 reads 数量
+        (3) EffectiveLength: 目标转录本有效长度，考虑了插入片段长度分布和序列特异性等  
+        (4) TPM: transcripts per million，TPM 计算公式中分母是总转录本数量的统计量，而 FPKM 和 RPKM 分母仅仅代表测序深度的变化  
+        (5) Numreads: map 到每个转录本的 reads 数量
 4. deseq2
     - deseq2_res.tab  
         (1) rownames: 基因 ID  
-        (2) baseMean: 所有样本矫正后的平均 reads 数  
+        (2) baseMean: 样本矫正后的平均 reads 数  
         (3) log2FoldChange: 表达量差异取 log2 后的值  
         (4) lfcSE: standard error: condition treated vs untreated  
-        (5) stat: Wald statistic Wald检验统计量  
+        (5) stat: Wald statistic Wald 检验统计量  
         (6) pvalue: 统计学差异显著性检验指标  
         (7) padj: 校正后的 pvalue, padj 越小,表示基因表达差异越显著
 5. oases
