@@ -86,9 +86,9 @@ Number of threads to use (默认为 3)
 2. align_idx  
 index 目录
 3. ref_gtf  
-参考基因组 .gtf 文件, 若无，此项设为 ''  
+参考基因组 .gtf 文件, 若无, 此项设为 "''"  
 4. hisat2_sps  
-若没有 ref_gtf, 此项设为 ''
+若没有 ref_gtf, 此项设为 "''"
 - Short_Read_Transcriptome_Reconstruction  
 1. stringtie_opts  
 stringtie 参数
@@ -96,7 +96,7 @@ stringtie 参数
 1. threads_salmon  
 salmon 运行 threads 数量，至少设为 4
 2. transcriptome_fa  
-参考转录组 fa 文件
+参考转录组 fa 文件, 若无, 此项设为 "''"  
 3. quantifier_idx  
 salmon index 索引位置
 4. salmon_k  
