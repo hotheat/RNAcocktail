@@ -128,7 +128,7 @@ A database of known polymorphic sites (e.g. dbSNP). Used in GATK BaseRecalibrato
 2. template_header:  
 shell header
 
-#  输出结果说明
+#  输出结果 (out_dir) 说明
 
 1. hisat2
     - alignments.sorted.bam 经过排序的 bam 文件
@@ -170,11 +170,14 @@ shell header
 
 5. work_dir 目录权限必须是 可写入.
 
+6. 流程会分别在 out_dir 和 work_dir 中生成结果文件, 如果较大的结果文件(如 *.bam 等), 请在流程结束后删除一份.
+
 #  更新说明
 
 - 2017.11.15  增加 -s 参数，指定每个部分开始的 step
 - 2017.11.17  添加功能：删除 oases 结束后产生较大的临时文件 (*.Graph2等)
 - 2018.04.25  增加 reads 中 *.fastq.gz 格式支持
+- 2018.05.10  增加 advanced_parameters.json 中 out_dir 目录设置
 
 
 
