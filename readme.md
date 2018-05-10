@@ -42,7 +42,7 @@ QD 集群：*/USRS/guojiao1/pipeline/rnacocktail/RNAcocktail_test/rnacocktail/( 
 |     内容         |    方法 1    | 方法 2 |
 | :--------------: | :---------: | :----------: |
 |     转录本定量    |    01-02 (stringtie)   | 03 (salmon) |
-|      差异表达     |   01-02-04 (stringtie)<br>根据是否有参考基因组 ref_gtf 选择 /STEP04_02(有) 及 /STEP04_03(无) | 03-04(/STEP04_01)<br>需要 ref_gtf   |
+|      差异表达     |   01-02-04 (stringtie)<br>根据是否有参考基因组 ref_gtf 选择 STEP04_02(有) 及 STEP04_03(无) | 03-04(/STEP04_01)<br>需要 ref_gtf   |
 |     转录本组装    |   01-02 (stringtie)<br>有参组装     | 05 (oases)<br>无参组装 |
 |   Call variant   | 01-02-06 (GATK) | -|
 
@@ -73,11 +73,11 @@ PE reads: _1.fastq.gz 和 _2.fastq.gz 以 , 分隔。
 例 "A1,A2 B1,B2"  A, B 代表不同样品, A1, A2 为重复样本  
 若没有重复样本，则以空格分隔
 2. threads  
-Number of threads to use (默认为 3)
+Number of threads to use (默认为 4)
 3. start  
 从流程中某一步开始运行(默认为 0)
 4. work_dir  
-结果目录及其他文件目录(可写入)
+结果目录及其他文件目录(需要写入)
 
 
 - Short_Read_Alignment
@@ -96,7 +96,7 @@ stringtie 参数
 1. threads_salmon  
 salmon 运行 threads 数量，至少设为 4
 2. transcriptome_fa  
-参考转录组 fa 文件, 若无, 此项设为 "''"  
+参考转录组 fa 文件, 若无, 此项无需改动  
 3. quantifier_idx  
 salmon index 索引位置
 4. salmon_k  
@@ -162,20 +162,18 @@ shell header
 
 1. json 文件说明, 见[链接]( http://www.w3school.com.cn/json/json_syntax.asp ) (字符串使用 双引号("")， {...} 内最后一个元素不能加",").
 
-2. 除特殊情况外，只进行基本参数设置即可.
+2. 除特殊情况外，只进行基本参数设置( general_parameters.json )即可.
 
-3. Hisat 比对默认索引文件默认在 general_parameters.json 中的 ref_genome_fa 目录中生成， 也可以在 advanced_parameters.json 中配置.
+3. Hisat 比对默认索引文件默认在 general_parameters.json 中的 ref_genome_fa 目录中生成, 如果采用默认配置, 目录需要有写入权限, 也可以在 advanced_parameters.json 中配置.
 
-
-4. salmon 比对默认索引文件默认在 general_parameters.json 中的 transcriptome_fa 目录中生成，也可以在 advanced_parameters.json 中配置.
-
+4. salmon 比对默认索引文件默认在 general_parameters.json 中的 transcriptome_fa 目录中生成, 如果采用默认配置, 目录需要有写入权限, 也可以在 advanced_parameters.json 中配置.
 
 5. work_dir 目录权限必须是 可写入.
 
 #  更新说明
 
 - 2017.11.15  增加 -s 参数，指定每个部分开始的 step
-- 2017.11.17  添加功能：删除 oases 结束后产生较大的临时文件 (Graph2等)
+- 2017.11.17  添加功能：删除 oases 结束后产生较大的临时文件 (*.Graph2等)
 - 2018.04.25  增加 reads 中 *.fastq.gz 格式支持
 
 
