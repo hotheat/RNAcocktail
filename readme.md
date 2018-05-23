@@ -162,13 +162,13 @@ shell header
 
 1. json 文件说明, 见[链接]( http://www.w3school.com.cn/json/json_syntax.asp ) (字符串使用 双引号("")， {...} 内最后一个元素不能加",").
 
-2. 除特殊情况外，只进行基本参数设置( general_parameters.json )即可.
+2. 除特殊情况外, 只进行基本参数设置( general_parameters.json )即可.
 
 3. Hisat 比对默认索引文件默认在 general_parameters.json 中的 ref_genome_fa 目录中生成, 如果采用默认配置, 目录需要有写入权限, 也可以在 advanced_parameters.json 中配置.
 
 4. salmon 比对默认索引文件默认在 general_parameters.json 中的 transcriptome_fa 目录中生成, 如果采用默认配置, 目录需要有写入权限, 也可以在 advanced_parameters.json 中配置.
 
-5. work_dir 目录权限必须是 可写入.
+5. work_dir 目录权限必须是可写入.
 
 6. 流程会分别在 out_dir 和 work_dir 中生成结果文件, 如果较大的结果文件(如 *.bam 等), 请在流程结束后删除一份.
 
