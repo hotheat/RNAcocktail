@@ -35,7 +35,7 @@ QD 集群：*/USRS/guojiao1/pipeline/rnacocktail/RNAcocktail_test/rnacocktail/( 
     - 02_short_read_reconstruction/  (vf=5g) 
     - 03_alignment_free_transcript_quantification/
     - 04_differential_analysis/
-    - 05_denovo_assembly/ ( 峰值内存大小与转录组数据有关 )
+    - 05_denovo_assembly/ ( 峰值内存大小与转录组数据有关, 850X 数据约 300g )
     - 06_variant_calling/
 5. 可以新建在 ./runlog 分别对应的目录中投递任务
 
