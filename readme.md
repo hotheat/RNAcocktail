@@ -79,7 +79,7 @@ Number of threads to use (默认为 4)
 4. work_dir  
 结果目录及其他文件目录(需要写入)
 5. large_genome  
-基因组大小如果 >4g, 请设置为 True. 目前此项设置只支持 PE reads.
+基因组大小如果 >4g, 请设置为 True. 目前此项设置为 True 时只支持 PE reads.
 
 
 - Short_Read_Alignment
@@ -181,7 +181,7 @@ shell header
 - 2017.11.17  添加功能：删除 oases 结束后产生较大的临时文件 (*.Graph2等)
 - 2018.04.25  增加 reads 中 *.fastq.gz 格式支持
 - 2018.05.10  增加 advanced_parameters.json 中 out_dir 目录设置
-- 2018.05.23  增加 advanced_parameters.json 
+- 2018.05.23  增加 advanced_parameters.json 中 large_genome 参数
 
 
 
