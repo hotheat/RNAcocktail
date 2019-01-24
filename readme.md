@@ -183,7 +183,7 @@ shell header
 - 2017.11.17  添加功能：删除 oases 结束后产生较大的临时文件 (*.Graph2等)
 - 2018.04.25  增加 reads 中 *.fastq.gz 格式支持
 - 2018.05.10  增加 advanced_parameters.json 中 out_dir 目录设置
-- 2018.05.23  增加 advanced_parameters.json 中 large_genome 参数
+- 2018.05.23  增加 advanced_parameters.json 中 --large_genome（>4 G） 参数
 
 
 
