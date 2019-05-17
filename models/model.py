@@ -139,6 +139,11 @@ class SequenceType(object):
     def __init__(self, initial_parameters):
         self.parameters = initial_parameters
 
+    def add_unzip(self, etc, fq):
+        if fq.endswith(('fq.gz', 'fastq.gz')):
+            etc['unzip'] = '--unzip'
+        return etc
+
     def extrat_pair_reads(self, seq_name):
         read_1_ls = []
         read_2_ls = []
@@ -163,6 +168,7 @@ class SequenceType(object):
 
     def choose_seq(self, num):
         etc = self.parameters
+        if 'unzip' in etc: del etc['unzip']
         seq_name = etc['seq_pwd']
         seq_type, seq = self.type_seq(seq_name)
         if seq_type == 'pair_reads':
@@ -170,6 +176,7 @@ class SequenceType(object):
             seq_2_fq = ','.join(seq[1]).split(',')
             etc['1'] = seq_1_fq[num]
             etc['2'] = seq_2_fq[num]
+            etc = self.add_unzip(etc, etc['1'])
         else:
             seq_fq = ','.join(seq).split(',')
             type_fq_dict = {
@@ -179,6 +186,7 @@ class SequenceType(object):
             }
             t = type_fq_dict.get(seq_type, None)
             etc[t] = seq_fq[num]
+            etc = self.add_unzip(etc, etc[t])
         return etc
 
 

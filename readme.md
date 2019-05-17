@@ -250,6 +250,7 @@ configure 目录中共有 4 个文件
 - 2018.05.10  增加 advanced_parameters.json 中 out_dir 目录设置
 - 2018.05.23  增加 advanced_parameters.json 中 large_genome 参数
 - 2019.04.16  修复参数 transcriptome_fa 和 ref_genome_fa 为 `"''"` 时，创建目录报错 bug。
+- 2019.05.17 修复 Salmon 接受 fastq 文件时，unzip 会出现 bug
 
 
 

@@ -15,9 +15,9 @@ run_rnacocktail.py quantify --quantifier_idx {{etc['quantifier_idx']}}\
      --U {{etc['U']}}\
        --libtype {{etc['libtype']}}\
         --sample {{etc['single_sample']}}\
-         --unzip {{etc['unzip']}}\
           --salmon {{etc['salmon']}}\
-           --salmon_smem_opts {{etc['salmon_smem_opts']}}
+           --salmon_smem_opts {{etc['salmon_smem_opts']}}\
+		   {{etc['unzip']}}
 
 CURTIME=`date +"%Y-%m-%d %H:%M:%S"`
 echo 'End at' $CURTIME
